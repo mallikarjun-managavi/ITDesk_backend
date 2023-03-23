@@ -26,6 +26,23 @@ exports.addMasterData = async(data) => {
     }
 }
 
+exports.updateMasterData = async(data) => {
+    try {
+        logger.info(`file: ${fname} updateMasterData is called`);
+        const dbConnection = await DB.ConnectToDb();
+        
+        const result = await MasterRepo.updateMasterData(data,dbConnection);
+
+        await dbConnection.release();
+        return result;
+    }
+    catch(err){
+        console.log(err);
+        logger.fatal(`file: ${fname},error: ${err}`);
+        throw err; 
+    }
+}
+
 exports.deleteMasterbyId = async(data) => {
     try {
         logger.info(`file: ${fname} deleteMasterbyId is called`);

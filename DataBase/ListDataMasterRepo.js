@@ -34,6 +34,20 @@ exports.addMasterData = async(data,dbConnection) => {
     }
 }
 
+exports.updateMasterData = async(data,dbConnection) => {
+    try {
+        logger.info(`file: ${fname} updateListDesc is called`);
+        const query = `UPDATE itdesk.listdatamaster SET listcode = '${data.listcode}', listdesc = '${data.listdesc}' WHERE listmstid = '${data.listmstid}';`
+        const result = DB.ExecuteQuery(dbConnection,query);
+        return result;
+    }
+    catch(err){
+        console.log(err);
+        logger.fatal(`file: ${fname},error: ${err}`); 
+        throw err;
+    }
+}
+
 exports.deleteMasterbyId = async(data,dbConnection) => {
     try {
         logger.info(`file: ${fname} deleteMasterbyId is called`);

@@ -638,3 +638,9 @@
 [2023-03-23T10:26:46.906] [INFO] app - file: ListDataMasterRepo.js getdescbyMasterCode is called
 [2023-03-23T10:27:00.370] [INFO] app - file: undefined getDescByMasterCode is called
 [2023-03-23T10:27:01.186] [INFO] app - file: ListDataMasterRepo.js getdescbyMasterCode is called
+[2023-03-23T11:33:44.577] [INFO] app - file: ListDataMasterController.js addMasterRecord is called
+[2023-03-23T11:33:44.685] [INFO] app - file: ListDataMasterServices.js updateMasterData is called
+[2023-03-23T11:33:44.994] [INFO] app - file: ListDataMasterRepo.js updateListDesc is called
+[2023-03-23T11:34:08.814] [INFO] app - file: ListDataMasterController.js addMasterRecord is called
+[2023-03-23T11:34:08.897] [INFO] app - file: ListDataMasterServices.js updateMasterData is called
+[2023-03-23T11:34:08.947] [INFO] app - file: ListDataMasterRepo.js updateListDesc is called

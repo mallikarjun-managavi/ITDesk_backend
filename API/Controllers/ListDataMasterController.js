@@ -42,6 +42,28 @@ const addMasterRecord = async(req,res) => {
     }
 }
 
+const updateMasterData = async(req,res) => {
+    try {
+         logger.info(`file: ${fname} addMasterRecord is called`);
+
+         const dbConnection = await DB.ConnectToDb();
+         const result = await ListDataMasterService.updateMasterData(req.body,dbConnection);
+
+         await dbConnection.release();
+         res.send({"Status": {
+            StatusCode: 200,
+            StatusType: "Success",
+            StatusMessage: "Record updated",
+            StatusSeverity: "Information",
+           },
+            result});
+    }
+    catch(err){
+        logger.fatal(`file: ${fname},error: ${err}`); 
+        res.status(500).json({err});
+    }
+}
+
 const deleteMasterbyId = async(req,res) => {
     try {
          logger.info(`file: ${fname} deleteMasterbyId is called`);
@@ -58,4 +80,4 @@ const deleteMasterbyId = async(req,res) => {
     }
 }
 
-module.exports = { getCodeByMasterId , addMasterRecord , deleteMasterbyId };
+module.exports = { getCodeByMasterId , addMasterRecord , deleteMasterbyId , updateMasterData };
